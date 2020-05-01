@@ -2,6 +2,11 @@
 
 A tool to easily calculate the fibonacci retracement levels based on both extremes (0 and 1).
 
+## Status
+
+[![npm version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+
 ## Installation
 
 Install the package via `yarn`:
@@ -59,3 +64,8 @@ __NOTE__: The method supports fibonacci retracement calculations as long as both
 ## License
 
 MIT
+
+[npm-image]: https://img.shields.io/npm/v/fib-retracement.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/fib-retracement
+[travis-image]: https://img.shields.io/travis/madeiras/fib-retracement.svg?style=flat-square
+[travis-url]: https://travis-ci.org/madeiras/fib-retracement
