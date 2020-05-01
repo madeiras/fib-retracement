@@ -1,0 +1,48 @@
+{
+  "name": "fib-retracement",
+  "version": "0.0.0",
+  "description": "A tool for calculating fib retracement values",
+  "keywords": [
+    "fib",
+    "fibonacci",
+    "fibonacciretrace",
+    "fibonacciretracement",
+    "fibonaccitrace",
+    "fibretrace",
+    "fibretracement",
+    "fibtrace"
+  ],
+  "homepage": "https://github.com/madeiras/fib-retracement",
+  "bugs": "https://github.com/madeiras/fib-retracement/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madeiras/fib-retracement.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Joao Pereira",
+    "email": "joaohrpereira@gmail.com",
+    "url": "https://github.com/madeiras"
+  },
+  "scripts": {
+    "changelog": "uphold-scripts changelog v$npm_package_version",
+    "lint": "uphold-scripts lint",
+    "release": "uphold-scripts release",
+    "test": "uphold-scripts test",
+    "version": "uphold-scripts version"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "index.js"
+    ]
+  },
+  "devDependencies": {
+    "uphold-scripts": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}
