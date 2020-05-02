@@ -31,19 +31,15 @@ describe('fib-retracement', () => {
       });
     });
 
-    it('should throw an error if `levels` is not valid', () => {
-      try {
-        fibRetracement.getFibRetracement({ levels: { 0: 1, foo: 'bar' } });
-
-        fail();
-      } catch (e) {
-        expect(e.message).toBe('The referenced `levels` are not valid');
-      }
+    ['foo', {}, NaN, undefined].forEach(value => {
+      it('should return an empty object if the `Number` casted `0` is NaN', () => {
+        expect(fibRetracement.getFibRetracement({ levels: { 0: value, 1: 1 } })).toEqual({});
+      });
     });
 
-    fibRetracement.levels.forEach(key => {
-      it('should return an empty object if both extreme levels are not defined', () => {
-        expect(fibRetracement.getFibRetracement({ levels: { [key]: 7224.03 } })).toEqual({});
+    ['foo', {}, NaN, undefined].forEach(value => {
+      it('should return an empty object if the `Number` casted `1` is NaN', () => {
+        expect(fibRetracement.getFibRetracement({ levels: { 0: 0, 1: value } })).toEqual({});
       });
     });
 
@@ -56,18 +52,6 @@ describe('fib-retracement', () => {
         0.618: 19.85553999999999,
         0.786: 41.95258,
         1: 70.1
-      });
-    });
-
-    it('should return `NaN` if the values are not castable to `Number`', () => {
-      expect(fibRetracement.getFibRetracement({ levels: { 0: '-61.43', 1: 'foo' } })).toEqual({
-        0: NaN,
-        0.236: NaN,
-        0.382: NaN,
-        0.5: NaN,
-        0.618: NaN,
-        0.786: NaN,
-        1: NaN
       });
     });
 

@@ -12,15 +12,7 @@ module.exports = {
       throw new Error('Unable to compute fib trace with the referenced `levels`');
     }
 
-    const keys = Object.keys(levels);
-
-    keys.forEach(key => {
-      if (!module.exports.levels.includes(Number(key))) {
-        throw new Error('The referenced `levels` are not valid');
-      }
-    });
-
-    if (levels[0] === undefined || levels[1] === undefined) {
+    if (isNaN(Number(levels[0])) || isNaN(Number(levels[1]))) {
       return {};
     }
 
