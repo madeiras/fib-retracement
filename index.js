@@ -14,22 +14,22 @@ module.exports = {
       throw new Error('Unable to compute fib trace with the referenced `levels`');
     }
 
-    if (isNaN(Number(levels[0])) || isNaN(Number(levels[1]))) {
+    const zero = Number(levels[0]);
+    const one = Number(levels[1]);
+
+    if (isNaN(zero) || isNaN(one)) {
       return {};
     }
 
-    const distance = Math.abs(Number(levels[1]) - Number(levels[0]));
-    const operation =
-      Number(levels[1]) > Number(levels[0])
-        ? (first, second) => Number(first) - Number(second)
-        : (first, second) => Number(first) + Number(second);
+    const distance = Math.abs(one - zero);
+    const operation = one > zero ? (first, second) => first - second : (first, second) => first + second;
 
     return Object.fromEntries(
       module.exports.levels.map(level => {
-        const difference = (1 - Number(level)) * Number(distance);
+        const difference = (1 - level) * distance;
         const value = operation(levels[1], difference);
 
-        return [level, Number(value)];
+        return [level, value];
       })
     );
   },
