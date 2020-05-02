@@ -4,7 +4,7 @@
 
 module.exports = {
   /**
-   * Get the fib retracement based on at least two fib retracement levels.
+   * Get the fib retracement based on `0` and `1` fib retracement levels.
    */
 
   getFibRetracement({ levels } = {}) {
