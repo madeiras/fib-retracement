@@ -43,6 +43,6 @@
     "uphold-scripts": "^0.4.0"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=12"
   }
 }
