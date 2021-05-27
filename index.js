@@ -27,7 +27,7 @@ module.exports = {
     return Object.fromEntries(
       module.exports.levels.map(level => {
         const difference = (1 - level) * distance;
-        const value = operation(levels[1], difference);
+        const value = operation(Number(levels[1]), difference);
 
         return [level, value];
       })

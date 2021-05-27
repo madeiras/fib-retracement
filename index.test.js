@@ -44,14 +44,14 @@ describe('fib-retracement', () => {
     });
 
     it('should convert the values to `Number`', () => {
-      expect(fibRetracement.getFibRetracement({ levels: { 0: '-61.43', 1: '70.1' } })).toEqual({
-        0: -61.43000000000001,
-        0.236: -30.388920000000013,
-        0.382: -11.185540000000003,
-        0.5: 4.334999999999994,
-        0.618: 19.85553999999999,
-        0.786: 41.95258,
-        1: 70.1
+      expect(fibRetracement.getFibRetracement({ levels: { 0: '4.74', 1: '4.59' } })).toEqual({
+        0: 4.74,
+        0.236: 4.7046,
+        0.382: 4.6827,
+        0.5: 4.665,
+        0.618: 4.6473,
+        0.786: 4.6221,
+        1: 4.59
       });
     });
 
