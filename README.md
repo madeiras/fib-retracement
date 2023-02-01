@@ -55,12 +55,6 @@ __NOTE__: The method supports fibonacci retracement calculations as long as both
 ❯ yarn test
 ```
 
-## Release
-
-```sh
-❯ yarn release ["major" | "minor" | "patch" | <custom version number>] # default: patch
-```
-
 ## License
 
 MIT

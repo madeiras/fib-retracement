@@ -1,7 +1,4 @@
-/* eslint-disable sort-keys */
-'use strict';
-
-const fibRetracement = require('./index');
+import * as fibRetracement from './index';
 
 /**
  * Test `fib-retracement`.
@@ -9,20 +6,10 @@ const fibRetracement = require('./index');
 
 describe('fib-retracement', () => {
   describe('getFibRetracement()', () => {
-    it('should throw an error if `levels` is not defined', () => {
-      try {
-        fibRetracement.getFibRetracement();
-
-        fail();
-      } catch (e) {
-        expect(e.message).toBe('Unable to compute fib trace with the referenced `levels`');
-      }
-    });
-
     ['foo', [], {}, 1, null, undefined].forEach(value => {
       it('should throw an error if `levels` is not a valid json object', () => {
         try {
-          fibRetracement.getFibRetracement({ levels: value });
+          fibRetracement.getFibRetracement({ levels: value as unknown as Record<number| string, number | string> });
 
           fail();
         } catch (e) {
@@ -33,13 +20,13 @@ describe('fib-retracement', () => {
 
     ['foo', {}, NaN, undefined].forEach(value => {
       it('should return an empty object if the `Number` casted `0` is NaN', () => {
-        expect(fibRetracement.getFibRetracement({ levels: { 0: value, 1: 1 } })).toEqual({});
+        expect(fibRetracement.getFibRetracement({ levels: { 0: value as unknown as number, 1: 1 } })).toEqual({});
       });
     });
 
     ['foo', {}, NaN, undefined].forEach(value => {
       it('should return an empty object if the `Number` casted `1` is NaN', () => {
-        expect(fibRetracement.getFibRetracement({ levels: { 0: 0, 1: value } })).toEqual({});
+        expect(fibRetracement.getFibRetracement({ levels: { 0: 0, 1: value as unknown as number } })).toEqual({});
       });
     });
 
