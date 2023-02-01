@@ -25,6 +25,7 @@
     "url": "https://github.com/madeiras"
   },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc --outDir dist",
     "lint": "eslint .",
