@@ -1,6 +1,6 @@
 {
   "name": "fib-retracement",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "A tool for calculating fib retracement values",
   "keywords": [
     "fib",
