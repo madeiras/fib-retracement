@@ -1,16 +1,16 @@
 /**
- * Get the fib retracement based on `0` and `1` fib retracement levels.
+ * Calculate levels.
  */
 
-export const getFibRetracement = ({ levels }: { levels: Record<number | string, number | string> }) => {
+function calculate({ levels }: CalculateInterface) {
   if (!levels || typeof levels !== 'object' || Array.isArray(levels) || Object.keys(levels).length === 0) {
     throw new Error('Unable to compute fib trace with the referenced `levels`');
   }
 
-  const zero = Number(levels[0]);
   const one = Number(levels[1]);
+  const zero = Number(levels[0]);
 
-  if (isNaN(zero) || isNaN(one)) {
+  if (isNaN(one) || isNaN(zero)) {
     return {};
   }
 
@@ -27,7 +27,25 @@ export const getFibRetracement = ({ levels }: { levels: Record<number | string, 
       return [level, value];
     })
   );
-};
+}
+
+interface CalculateInterface {
+  levels: Record<number | string, number | string>
+} 
+
+/**
+ * Get the fib retracement based on `0` and `1` fib retracement levels.
+ */
+
+export function getFibRetracement(start: number | string, end: number | string);
+export function getFibRetracement({ levels }: CalculateInterface);
+export function getFibRetracement(...values: unknown[]) {
+  const payload = values[0] && Object.prototype.hasOwnProperty.call(values[0], 'levels') ? 
+    values[0] : 
+    { levels: { 0: values[1], 1: values[0] } }
+
+  return calculate(payload as CalculateInterface);
+}
 
 /**
  * Levels.

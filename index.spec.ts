@@ -65,5 +65,17 @@ describe('fib-retracement', () => {
         1: 6280
       });
     });
+
+    it('should accept call with positional parameters', () => {
+      expect(fibRetracement.getFibRetracement('70.1', '-61.43')).toEqual({
+        0: -61.43000000000001,
+        0.236: -30.388920000000013,
+        0.382: -11.185540000000003,
+        0.5: 4.334999999999994,
+        0.618: 19.85553999999999,
+        0.786: 41.95258,
+        1: 70.1
+      });
+    });
   });
 });
