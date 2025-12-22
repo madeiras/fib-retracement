@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Test on Node.js ${{ matrix.node-version }}
@@ -41,3 +44,18 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  # Summary job that provides a single status check
+  ci-success:
+    name: CI
+    runs-on: ubuntu-latest
+    needs: [test]
+    if: always()
+
+    steps:
+      - name: Check test matrix status
+        if: needs.test.result != 'success'
+        run: exit 1
+
+      - name: All checks passed
+        run: echo "All CI checks passed successfully"

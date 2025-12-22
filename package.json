@@ -26,9 +26,15 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc --outDir dist",
     "lint": "eslint .",
+    "prepublishOnly": "pnpm build",
     "test": "jest"
   },
   "jest": {
