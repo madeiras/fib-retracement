@@ -5,7 +5,7 @@ A tool to easily calculate the fibonacci retracement levels based on both extrem
 ## Status
 
 [![npm version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
+[![build status][gh-actions-image]][gh-actions-url]
 
 ## Installation
 
@@ -67,5 +67,5 @@ MIT
 
 [npm-image]: https://img.shields.io/npm/v/fib-retracement.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/fib-retracement
-[travis-image]: https://img.shields.io/travis/madeiras/fib-retracement.svg?style=flat-square
-[travis-url]: https://travis-ci.org/madeiras/fib-retracement
+[gh-actions-image]: https://github.com/madeiras/fib-retracement/actions/workflows/ci.yml/badge.svg
+[gh-actions-url]: https://github.com/madeiras/fib-retracement/actions/workflows/ci.yml
