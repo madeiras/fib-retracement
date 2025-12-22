@@ -9,10 +9,10 @@ A tool to easily calculate the fibonacci retracement levels based on both extrem
 
 ## Installation
 
-Install the package via `yarn`:
+Install the package via `pnpm`:
 
 ```sh
-❯ yarn add fib-retracement
+❯ pnpm add fib-retracement
 ```
 
 or via `npm`:
@@ -58,7 +58,7 @@ __NOTE__: The method supports fibonacci retracement calculations as long as both
 ## Tests
 
 ```
-❯ yarn test
+❯ pnpm test
 ```
 
 ## License
