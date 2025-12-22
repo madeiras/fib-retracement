@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.3.2](https://github.com/madeiras/fib-retracement/releases/tag/v0.3.2) (2025-12-22)
+
 ## [v0.3.1](https://github.com/madeiras/fib-retracement/releases/tag/v0.3.1) (2025-12-22)
 
 ## [v0.2.1](https://github.com/madeiras/fib-retracement/releases/tag/v0.2.1) (2023-02-14)
