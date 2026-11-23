@@ -1,6 +1,6 @@
 {
   "name": "fib-retracement",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "A tool for calculating fibonacci retracement and extension levels",
   "keywords": [
     "fib",
