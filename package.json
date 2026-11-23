@@ -1,22 +1,26 @@
 {
   "name": "fib-retracement",
   "version": "0.3.2",
-  "description": "A tool for calculating fib retracement values",
+  "description": "A tool for calculating fibonacci retracement and extension levels",
   "keywords": [
     "fib",
+    "fibextension",
     "fibonacci",
+    "fibonacciextension",
     "fibonacciretrace",
     "fibonacciretracement",
     "fibonaccitrace",
     "fibretrace",
     "fibretracement",
-    "fibtrace"
+    "fibtrace",
+    "technical-analysis",
+    "trading"
   ],
   "homepage": "https://github.com/madeiras/fib-retracement",
   "bugs": "https://github.com/madeiras/fib-retracement/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/madeiras/fib-retracement.git"
+    "url": "git+https://github.com/madeiras/fib-retracement.git"
   },
   "license": "MIT",
   "author": {
@@ -24,41 +28,46 @@
     "email": "joaohrpereira@gmail.com",
     "url": "https://github.com/madeiras"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc --outDir dist",
+    "build": "tsdown",
     "lint": "eslint .",
     "prepublishOnly": "pnpm build",
-    "test": "jest"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "index.ts"
-    ],
-    "testPathIgnorePatterns": [
-      "./*.js"
-    ],
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    }
+    "test": "vitest run",
+    "typecheck": "tsc"
   },
   "devDependencies": {
-    "@types/jest": "^29.4.0",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
-    "jest": "^29.4.1",
-    "ts-jest": "^29.0.5",
-    "tslib": "^2.8.1",
-    "typescript": "^4.9.5"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "tsdown": "^0.23.7",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.1"
   },
+  "packageManager": "pnpm@12.16.1",
   "engines": {
-    "node": ">=12"
+    "node": ">=22"
   }
 }

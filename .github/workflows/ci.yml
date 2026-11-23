@@ -16,19 +16,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [22, 24, 26]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
+      # Version comes from `packageManager` in package.json
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
+        uses: pnpm/action-setup@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -38,6 +37,9 @@ jobs:
 
       - name: Run linter
         run: pnpm lint
+
+      - name: Run type check
+        run: pnpm typecheck
 
       - name: Run tests
         run: pnpm test

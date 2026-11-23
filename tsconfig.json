@@ -1,20 +1,16 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
     "declaration": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "lib": ["es2019"],
-    "moduleResolution": "node",
-    "paths": {},
-    "rootDir": ".",
-    "skipDefaultLibCheck": true,
+    "isolatedDeclarations": true,
+    "lib": ["es2022"],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
-    "sourceMap": true,
-    "target": "es5"
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": true
   },
-  "exclude": ["*.spec.ts", "node_modules"]
+  "include": ["*.ts"]
 }
